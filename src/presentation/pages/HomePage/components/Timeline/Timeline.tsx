@@ -5,7 +5,7 @@ import { cn } from "@/libs/utils";
 
 function Timeline() {
   return (
-    <div className="container my-14">
+    <div className="container mt-14">
       <h2 className="sm:text-5xl text-2xl text-center font-bold mb-10">
         Conferences
       </h2>
@@ -77,7 +77,9 @@ const TimelineContent = ({
             </div>
           </div>
           <div className="w-full h-full mb-4 sm:mb-0">
-            <p className="text-sm text-gray pl-20 mt-3">02 September, 2023</p>
+            <p className="text-sm text-gray pl-20 sm:mt-3">
+              02 September, 2023
+            </p>
           </div>
         </div>
       ) : (
@@ -91,7 +93,7 @@ const TimelineContent = ({
           )}
         >
           <div className="w-full h-full mb-4 sm:mb-0 flex justify-start sm:justify-end">
-            <p className="text-sm text-gray pl-20 sm:pl-0 sm:pr-10 mt-3">
+            <p className="text-sm text-gray pl-20 sm:pl-0 sm:pr-10 sm:mt-3">
               02 September, 2023
             </p>
           </div>
