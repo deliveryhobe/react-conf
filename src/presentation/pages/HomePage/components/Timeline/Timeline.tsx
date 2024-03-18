@@ -1,0 +1,58 @@
+/* eslint-disable react/no-unescaped-entities */
+import React from "react";
+import styles from "./Timeline.module.css";
+
+function Timeline() {
+  return (
+    <div className="container my-14">
+      <h2 className="sm:text-5xl text-2xl text-center font-bold mb-10">
+        Conferences
+      </h2>
+      <div className="">
+        <TimelineContent />
+      </div>
+    </div>
+  );
+}
+
+export default Timeline;
+
+const TimelineContent = () => {
+  return (
+    <>
+      <div className="w-full relative flex flex-col-reverse sm:flex-row justify-between">
+        <div className="w-full flex justify-end sm:pr-14">
+          <div className="p-4 rounded-lg bg-light border-t-4 border-gray-light flex gap-4 max-w-[480px] shadow-[5px_0px_10px_0px_#00000024]">
+            <div className="flex gap-4">
+              <div className="h-4 w-4 rounded-full bg-secondary flex items-center justify-center">
+                <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
+              </div>
+            </div>
+            <div className="">
+              <h2 className="text-lg font-medium">Freezing Edge 2023</h2>
+              <p className="text-sm text-gray-light mt-1">
+                The edge isn't bleeding, it's freezing!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="absolute left-0 top-0 sm:left-1/2">
+          <div className="h-[110px] w-0.5 bg-gray-light absolute left-6 sm:left-1/2 -z-10 top-14"></div>
+          <div className="h-12 w-12 rounded-full bg-light border border-gray-light flex items-center justify-center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <g clipPath="url(#clip0_3_145)">
+                <path
+                  d="M19.9024 10.2969L9.93801 23.7969C9.89151 23.8599 9.83088 23.911 9.761 23.9463C9.69112 23.9816 9.61394 24 9.53566 24C9.46975 24.0002 9.40448 23.9871 9.34376 23.9614C9.24043 23.9186 9.15448 23.8424 9.09967 23.7449C9.04486 23.6474 9.02438 23.5343 9.04151 23.4238L10.417 14.5H4.50001C4.40748 14.5 4.31678 14.4743 4.23797 14.4258C4.15917 14.3773 4.09537 14.3079 4.05367 14.2253C4.01197 14.1428 3.994 14.0502 4.00176 13.958C4.00953 13.8658 4.04273 13.7776 4.09766 13.7031L14.062 0.203132C14.1284 0.113161 14.223 0.0480384 14.3308 0.0181699C14.4385 -0.0116986 14.5532 -0.00458897 14.6564 0.0383627C14.7596 0.0813145 14.8455 0.157629 14.9003 0.255113C14.955 0.352597 14.9755 0.465623 14.9585 0.576132L13.583 9.49998H19.5C19.5925 9.49998 19.6833 9.52564 19.7621 9.57413C19.8409 9.62262 19.9047 9.69203 19.9464 9.77463C19.9881 9.85723 20.0061 9.94978 19.9983 10.042C19.9905 10.1342 19.9573 10.2224 19.9024 10.2969Z"
+                  fill="#CDCDCD"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div className="w-full h-full mb-4 sm:mb-0">
+          <p className="text-sm text-gray pl-20 mt-3">02 September, 2023</p>
+        </div>
+      </div>
+    </>
+  );
+};
