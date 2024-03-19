@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/presentation/pages/HomePage/components/Footer";
 import Navbar from "@/presentation/components/Navbar";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { ENV } from "@/ENV";
+import GraphQLProvider from "@/presentation/components/GraphQLProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        {children}
+        <GraphQLProvider>{children}</GraphQLProvider>
         <Footer />
       </body>
     </html>

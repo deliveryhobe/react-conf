@@ -8,7 +8,7 @@ const ConferencePage = () => {
   const [items, setItem] = useState([1, 2, 3, 4, 5]);
   const [selectedItem, setSelectedItem] = useState(1);
   return (
-    <div className="container pt-[150px] pb-[105px] bg-white min-h-screen">
+    <section className="container pt-[150px] pb-[105px] bg-white min-h-screen">
       <h1 className="text-5xl font-bold text-primary">
         Conference name goes here
       </h1>
@@ -36,7 +36,7 @@ const ConferencePage = () => {
           <ConferenceCardDetails />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

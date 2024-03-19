@@ -1,5 +1,6 @@
+"use client";
 import Navbar from "@/presentation/components/Navbar";
-import React from "react";
+import React, { useEffect } from "react";
 import HeroSection from "./components/HeroSection";
 import Timeline from "./components/Timeline";
 import Sponsor from "./components/Sponsor";
