@@ -12,7 +12,7 @@ const Sponsor = () => {
           <p className="font-medium text-gray-light text-center">
             🥇 Gold Sponsor
           </p>
-          <div className="flex justify-center gap-14 flex-wrap mt-9">
+          <div className="flex justify-center gap-4 sm:gap-14 flex-wrap mt-9">
             <Image
               src="/images/layer.png"
               width={130}
@@ -34,7 +34,7 @@ const Sponsor = () => {
           <p className="font-medium text-gray-light text-center">
             🥈Silver Sponsors
           </p>
-          <div className="flex justify-center gap-14 flex-wrap mt-9">
+          <div className="flex justify-center gap-4 sm:gap-14 flex-wrap mt-9">
             <Image
               src="/images/circooles.png"
               width={130}
@@ -63,7 +63,7 @@ const Sponsor = () => {
           <p className="font-medium text-gray-light text-center">
             🥉Bronze Sponsors
           </p>
-          <div className="flex justify-center gap-14 flex-wrap mt-9">
+          <div className="flex justify-center gap-4 sm:gap-14 flex-wrap mt-9">
             <Image
               src="/images/sisyphus2.png"
               width={130}

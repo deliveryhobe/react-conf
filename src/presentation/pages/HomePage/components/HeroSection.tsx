@@ -3,7 +3,7 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className="px-4 lg:px-0 relative mt-16 lg:mt-[120px] mx-auto w-full">
+    <div className="px-4 lg:px-0 relative mt-16 lg:mt-[220px] mx-auto w-full">
       <div className="text-primary w-3/4 lg:w-2/3 relative">
         <Image
           src="./images/Sketch-annotation.svg"
