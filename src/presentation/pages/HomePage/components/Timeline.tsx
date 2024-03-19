@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
-import styles from "./Timeline.module.css";
 import { cn } from "@/libs/utils";
 
 function Timeline() {

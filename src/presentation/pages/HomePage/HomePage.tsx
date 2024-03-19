@@ -1,7 +1,9 @@
 import Navbar from "@/presentation/components/Navbar";
 import React from "react";
 import HeroSection from "./components/HeroSection";
-import Timeline from "./components/Timeline/Timeline";
+import Timeline from "./components/Timeline";
+import Footer from "./components/Footer";
+import Sponsor from "./components/Sponsor";
 
 const HomePage = () => {
   return (
@@ -16,7 +18,9 @@ const HomePage = () => {
       </header>
       <main>
         <Timeline />
+        <Sponsor />
       </main>
+      <Footer />
     </>
   );
 };
