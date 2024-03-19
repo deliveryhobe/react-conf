@@ -8,59 +8,57 @@ export const GET_CONFERENCES = gql`
     startDate
     name
     slogan
-    organizers {
+  }
+  }
+`;
+
+
+export const GET_CONFERENCE = gql`
+  query GetConference($id: ID!) {
+    conference(id: $id) {
+      id
+      startDate
       name
-      aboutShort
-      image {
-        url
-      }
-    }
-    sponsors {
-      name
-      aboutShort
-      image {
-        url
-      }
-    }
-    schedules {
-      day
-      location {
+      slogan
+      organizers {
         name
-        about
-        city
-        address
+        aboutShort
+        image {
+          url
+        }
       }
-      intervals {
-        sessions {
-          title
-          day
-          begin
-          end
+      sponsors {
+        name
+        aboutShort
+        image {
+          url
+        }
+      }
+      schedules {
+        day
+        location {
+          name
+          about
+          city
+          address
+        }
+        intervals {
+          sessions {
+            title
+            day
+            begin
+            end
+          }
+        }
+      }
+      speakers {
+        name
+        aboutShort
+        image {
+          url
         }
       }
     }
-    speakers {
-       name
-      aboutShort
-      image {
-        url
-      }
-    }
-  }
   }
 `;
 
-
-export const SNACKBAR_STATE_QUERY = gql`
-  query snackbar {
-    snackBarOpen @client
-    snackMsg @client
-     snackType @client
-  }
-`;
-
-export const IS_LEFT_DRAWER_OPEN = gql`
-  query isLeftDrawerOpen {
-    isLeftDrawerOpen @client
-  }
-`;

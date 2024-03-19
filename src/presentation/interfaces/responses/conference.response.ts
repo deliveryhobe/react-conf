@@ -1,5 +1,11 @@
 import { ConferenceEntity } from "../entities";
 
-export interface IConferenceResponse {
+export interface IConferencesResponse {
     conferences: ConferenceEntity[]
+}
+
+
+
+export interface ISingleConferenceResponse {
+    conference: ConferenceEntity
 }

@@ -7,7 +7,7 @@ const ConferenceCard = ({
   isSelected = false,
   onSelect,
 }: {
-  item: number;
+  item: string;
   onSelect: () => void;
   isSelected?: boolean;
 }) => {
@@ -33,7 +33,7 @@ const ConferenceCard = ({
             />
           </svg>
         </div>
-        <p className="text-lg font-bold text-current">Organizer {item}</p>
+        <p className="text-lg font-bold text-current">{item}</p>
       </button>
       <div className="block sm:hidden overflow-hidden">
         <AnimatePresence>

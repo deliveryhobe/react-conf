@@ -4,14 +4,14 @@ import React, { FC } from "react";
 import { cn } from "@/libs/utils";
 import Link from "next/link";
 import { ConferenceEntity } from "@/presentation/interfaces/entities";
-import { IConferenceResponse } from "@/presentation/interfaces/responses/conference.response";
+import { IConferencesResponse } from "@/presentation/interfaces/responses/conference.response";
 import { GET_CONFERENCES } from "@/libs/graphql/queries";
 import { useQuery } from "@apollo/client";
 import Spinner from "@/presentation/components/Spinner";
 
 const Timeline = () => {
   const { loading, error, data } =
-    useQuery<IConferenceResponse>(GET_CONFERENCES);
+    useQuery<IConferencesResponse>(GET_CONFERENCES);
   return (
     <div className="container mt-14">
       <h2 className="sm:text-5xl text-2xl text-center font-bold mb-10">
@@ -28,6 +28,7 @@ const Timeline = () => {
               key={index}
               isRight={(index + 1) % 2 == 0}
               conference={conference}
+              isLast={index + 1 == data?.conferences?.length}
             />
           ))
         ) : (

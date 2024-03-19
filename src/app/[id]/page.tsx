@@ -1,7 +1,7 @@
 import ConferencePage from "@/presentation/pages/ConferencePage/ConferencePage";
 
-const page = () => {
-  return <ConferencePage />;
+const page = ({ params }: { params: { id: string } }) => {
+  return <ConferencePage id={params?.id} />;
 };
 
 export default page;
