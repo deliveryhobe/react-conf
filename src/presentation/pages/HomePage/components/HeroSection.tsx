@@ -75,10 +75,11 @@ const HeroSection = () => {
               width={330}
               height={420}
               alt=""
+              className="lg:ml-16 2xl:ml-0 lg:w-4/6 2xl:w-full"
             />
             <Image
               src="/images/Ornament.svg"
-              className="absolute -right-[140%] bottom-0 lg:-right-16 lg:bottom-5 -z-10"
+              className="absolute -right-[140%] bottom-0 lg:-right-3 2xl:-right-16 lg:bottom-44 2xl:bottom-5 -z-10"
               width={150}
               height={150}
               alt=""
@@ -114,14 +115,14 @@ const HeroSection = () => {
           <div className="hidden lg:block relative">
             <Image
               src="/images/hero-image-2.png"
-              className="relative left-36 bottom-32"
+              className="relative left-20 2xl:left-36 bottom-32 2xl:w-full lg:w-4/6"
               width={440}
               height={460}
               alt=""
             />
             <Image
               src="/images/Star.svg"
-              className="absolute left-24 bottom-36"
+              className="absolute 2xl:left-24 bottom-80 left-8 2xl:bottom-36"
               width={100}
               height={100}
               alt=""

@@ -37,13 +37,13 @@ const ConferencePage = ({ id }: { id: string }) => {
         <p className="text-primary text-center">Something went wrong</p>
       ) : (
         <>
-          <h1 className="text-5xl font-bold text-primary">
+          <h1 className="text-2xl lg:text-5xl font-bold text-primary">
             {data?.conference?.name}
           </h1>
-          <p className="text-[#0A142F] text-lg  mt-4">
+          <p className="text-[#0A142F] text-base lg:text-lg  mt-4">
             {data?.conference?.slogan}
           </p>
-          <div className="mt-[52px] w-full flex gap-12 items-start rounded-lg">
+          <div className="mt-10 lg:mt-[52px] w-full flex gap-12 items-start rounded-lg">
             <div className="w-full lg:w-[365px] space-y-3">
               <Reorder.Group values={options} onReorder={setOptions}>
                 {options?.map((option) => (

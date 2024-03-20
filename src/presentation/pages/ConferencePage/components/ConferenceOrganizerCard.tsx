@@ -9,7 +9,7 @@ const ConferenceOrganizerCard = ({
 }) => {
   return (
     <>
-      <div className="p-4 bg-white rounded-lg flex items-center gap-10">
+      <div className="p-4 bg-white rounded-lg flex items-center gap-10 mb-4 lg:mb-0">
         <Image
           src={organizer?.image?.url}
           alt=""
