@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Footer from "@/presentation/pages/HomePage/components/Footer";
 import Navbar from "@/presentation/components/Navbar";
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import { ENV } from "@/ENV";
 import GraphQLProvider from "@/presentation/components/GraphQLProvider";
+import Footer from "@/presentation/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
