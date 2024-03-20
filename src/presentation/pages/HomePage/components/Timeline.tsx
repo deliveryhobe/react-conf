@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import React, { FC } from "react";
-import { cn } from "@/libs/utils";
+import { Utils, cn } from "@/libs/utils";
 import Link from "next/link";
 import { ConferenceEntity } from "@/presentation/interfaces/entities";
 import { IConferencesResponse } from "@/presentation/interfaces/responses/conference.response";
@@ -13,7 +13,7 @@ const Timeline = () => {
   const { loading, error, data } =
     useQuery<IConferencesResponse>(GET_CONFERENCES);
   return (
-    <div className="container mt-14">
+    <div className="container mt-14" id="timeline">
       <h2 className="sm:text-5xl text-2xl text-center font-bold mb-10">
         Conferences
       </h2>
@@ -65,10 +65,10 @@ const TimelineContent = ({
           )}
         >
           <Link
-            className="w-full flex justify-end sm:pr-14"
+            className="w-full flex justify-end sm:justify-end sm:pr-14"
             href={`/${conference?.id}`}
           >
-            <div className="p-4 rounded-lg bg-light border-t-4 border-gray-light flex gap-4 max-w-[480px] shadow-[5px_0px_10px_0px_#00000024]">
+            <div className="p-4 rounded-lg bg-light border-t-4 border-gray-light flex gap-4 w-[320px] lg:w-[480px] shadow-[5px_0px_10px_0px_#00000024]">
               <div className="flex gap-4">
                 <div className="h-4 w-4 rounded-full bg-secondary flex items-center justify-center">
                   <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
@@ -102,8 +102,8 @@ const TimelineContent = ({
             </div>
           </div>
           <div className="w-full h-full mb-4 sm:mb-0">
-            <p className="text-sm text-gray pl-20 sm:mt-3">
-              {conference?.startDate}
+            <p className="text-sm text-gray pl-14 sm:pl-20 sm:mt-3">
+              {Utils.formattedDate(conference?.startDate, "MMMM DD, YYYY")}
             </p>
           </div>
         </div>
@@ -118,8 +118,8 @@ const TimelineContent = ({
           )}
         >
           <div className="w-full h-full mb-4 sm:mb-0 flex justify-start sm:justify-end">
-            <p className="text-sm text-gray pl-20 sm:pl-0 sm:pr-10 sm:mt-3">
-              {conference?.startDate}
+            <p className="text-sm text-gray pl-14 sm:pl-0 sm:pr-10 sm:mt-3">
+              {Utils.formattedDate(conference?.startDate, "DD MMMM, YYYY")}
             </p>
           </div>
           <div className="absolute left-0 top-0 sm:left-1/2">
@@ -144,9 +144,9 @@ const TimelineContent = ({
           </div>
           <Link
             href={`/${conference?.id}`}
-            className="w-full flex justify-end sm:justify-start sm:pl-28"
+            className="w-full flex justify-start sm:justify-start pl-14 lg:pl-28"
           >
-            <div className="p-4 rounded-lg bg-light border-t-4 border-gray-light flex gap-4 max-w-[480px] shadow-[5px_0px_10px_0px_#00000024]">
+            <div className="p-4 rounded-lg bg-light border-t-4 border-gray-light flex gap-4 w-[320px] lg:w-[480px] shadow-[5px_0px_10px_0px_#00000024]">
               <div className="flex gap-4">
                 <div className="h-4 w-4 rounded-full bg-secondary flex items-center justify-center">
                   <div className="w-1.5 h-1.5 rounded-full bg-white"></div>

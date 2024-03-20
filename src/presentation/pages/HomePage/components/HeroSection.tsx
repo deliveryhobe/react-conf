@@ -2,6 +2,15 @@ import Image from "next/image";
 import React from "react";
 
 const HeroSection = () => {
+  const scrolltoHash = function () {
+    const element = document.getElementById("timeline");
+    element?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+  };
+
   return (
     <div className="px-4 lg:px-0 relative mt-16 lg:mt-[220px] mx-auto w-full">
       <div className="text-primary w-3/4 lg:w-2/3 relative">
@@ -92,7 +101,7 @@ const HeroSection = () => {
               </svg>
             </button>
             <div className="absolute right-16 mt-8">
-              <button className="">
+              <button className="" onClick={scrolltoHash}>
                 <Image
                   src="/images/scroll-icon.svg"
                   width={20}

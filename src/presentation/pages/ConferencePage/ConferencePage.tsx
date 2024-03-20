@@ -20,7 +20,7 @@ const ConferencePage = ({ id }: { id: string }) => {
     "Schedule",
     "Sponsors",
   ]);
-  const [selectedOption, setSelectedOption] = useState<OptionType>("Sponsors");
+  const [selectedOption, setSelectedOption] = useState<OptionType>("Organizer");
 
   const { loading, error, data } = useQuery<ISingleConferenceResponse>(
     GET_CONFERENCE,
