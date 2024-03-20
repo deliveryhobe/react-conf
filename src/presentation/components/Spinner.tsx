@@ -1,6 +1,6 @@
 import React from "react";
 
-const Spinner = () => (
+const Spinner = ({ size = 100 }: { size?: number }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -10,8 +10,8 @@ const Spinner = () => (
       display: "block",
       shapeRendering: "auto",
     }}
-    width="100px"
-    height="100px"
+    width={`${size}px`}
+    height={`${size}px`}
     viewBox="0 0 100 100"
     preserveAspectRatio="xMidYMid"
   >
