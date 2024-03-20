@@ -6,9 +6,9 @@ const Navbar = () => {
   return (
     <nav className="w-full absolute">
       <div className="mx-auto container flex items-center justify-between py-4 lg:py-10">
-        <div className="logo">
+        <Link href="/" className="logo">
           <Image src="./images/logo.svg" width={60} height={60} alt="React" />
-        </div>
+        </Link>
         <ul className="hidden lg:flex justify-center items-center gap-12 text-lg">
           <li>
             <Link href="#">About Us</Link>

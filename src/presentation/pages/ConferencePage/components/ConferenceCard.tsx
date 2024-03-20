@@ -1,15 +1,23 @@
 import { AnimatePresence, motion } from "framer-motion";
-import ConferenceCardDetails from "./ConferenceCardDetails";
 import { cn } from "@/libs/utils";
+import ConferenceOrganizerCard from "./ConferenceOrganizerCard";
+import ConferenceSpeakerCard from "./ConferenceSpeakerCard";
+import ConferenceScheduleCard from "./ConferenceScheduleCard";
+import ConferenceSponsorCard from "./ConferenceSponsorCard";
+import { ISingleConferenceResponse } from "@/presentation/interfaces/responses/conference.response";
 
 const ConferenceCard = ({
   item,
   isSelected = false,
   onSelect,
+  selectedOption,
+  data,
 }: {
   item: string;
   onSelect: () => void;
   isSelected?: boolean;
+  selectedOption: string;
+  data: ISingleConferenceResponse | undefined;
 }) => {
   return (
     <div className="w-full">
@@ -35,7 +43,13 @@ const ConferenceCard = ({
         </div>
         <p className="text-lg font-bold text-current">{item}</p>
       </button>
-      <div className="block sm:hidden overflow-hidden">
+      <div
+        className={cn(
+          "block lg:hidden overflow-hidden bg-light px-4",
+          isSelected &&
+            "mb-6 pt-6 max-h-[660px] overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-light"
+        )}
+      >
         <AnimatePresence>
           {isSelected && (
             <motion.div
@@ -43,7 +57,27 @@ const ConferenceCard = ({
               animate={{ opacity: 1, height: "auto", marginBottom: "24px" }}
               exit={{ opacity: 0, height: 0, marginBottom: "0px" }}
             >
-              <ConferenceCardDetails />
+              {selectedOption == "Organizer" &&
+                data?.conference?.organizers?.map((org, index) => (
+                  <ConferenceOrganizerCard key={index} organizer={org} />
+                ))}
+
+              {selectedOption == "Speakers" &&
+                data?.conference?.speakers?.map((speaker, index) => (
+                  <ConferenceSpeakerCard key={index} speaker={speaker} />
+                ))}
+
+              {selectedOption == "Schedule" &&
+                data?.conference?.schedules?.map((schedule, index) => (
+                  <ConferenceScheduleCard key={index} schedule={schedule} />
+                ))}
+
+              <div className="flex flex-col gap-5">
+                {selectedOption == "Sponsors" &&
+                  data?.conference?.sponsors?.map((sponsor, index) => (
+                    <ConferenceSponsorCard key={index} sponsor={sponsor} />
+                  ))}
+              </div>
             </motion.div>
           )}
         </AnimatePresence>

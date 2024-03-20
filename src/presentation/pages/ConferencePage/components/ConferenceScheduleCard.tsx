@@ -8,18 +8,20 @@ const ConferenceScheduleCard = ({
   schedule: ConferenceScheduleEntity;
 }) => {
   return (
-    <div className="py-4 px-14 bg-white rounded-lg gap-10">
+    <div className="py-4 px-5 sm:px-14 bg-white rounded-lg gap-10">
       <div className="w-full flex justify-between items-center">
-        <h3 className="font-bold text-xl text-primary">
+        <h3 className="font-bold text-base sm:text-xl text-primary">
           {Utils.formattedDate(schedule?.day, "MMMM DD, YYYY")}
         </h3>
-        <p className="text-primary">{Utils.getDayName(schedule?.day)}</p>
+        <p className="text-primary sm:text-base text-xs">
+          {Utils.getDayName(schedule?.day)}
+        </p>
       </div>
 
       <div className="">
         {schedule?.intervals?.length > 0 &&
           schedule?.intervals?.map((interval, index) => (
-            <div key={index} className="mt-5 text-primary">
+            <div key={index} className="mt-5 text-primary sm:text-base text-sm">
               {interval?.sessions?.length > 0 && (
                 <>
                   <p>

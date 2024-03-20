@@ -10,7 +10,7 @@ const ConferenceSpeakerCard = ({
 }) => {
   return (
     <>
-      <div className="p-4 bg-white rounded-lg flex items-center gap-10">
+      <div className="p-3 sm:p-4 bg-white rounded-lg flex items-start sm:items-center gap-[15px] sm:gap-10 mb-4">
         <Image
           src={speaker?.image?.url}
           alt=""
@@ -19,9 +19,9 @@ const ConferenceSpeakerCard = ({
           className="object-contain h-full rounded-md"
         />
         <div className="flex flex-col items-start gap-2 sm:gap-5 w-full">
-          <div className="flex justify-between items-center w-full">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full">
             <p className="font-bold text-lg text-primary">{speaker?.name}</p>
-            <div className="flex items-center  gap-4">
+            <div className="flex items-center gap-4 sm:my-0 my-2">
               <Link href={"#"}>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path
