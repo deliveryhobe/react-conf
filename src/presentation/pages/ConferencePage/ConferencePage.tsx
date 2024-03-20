@@ -8,6 +8,8 @@ import { GET_CONFERENCE } from "@/libs/graphql/queries";
 import Spinner from "@/presentation/components/Spinner";
 import { ISingleConferenceResponse } from "@/presentation/interfaces/responses/conference.response";
 import ConferenceOrganizerCard from "./components/ConferenceOrganizerCard";
+import ConferenceSpeakerCard from "./components/ConferenceSpeakerCard";
+import ConferenceScheduleCard from "./components/ConferenceScheduleCard";
 
 type OptionType = "Organizer" | "Speakers" | "Schedule" | "Sponsors";
 
@@ -18,7 +20,7 @@ const ConferencePage = ({ id }: { id: string }) => {
     "Schedule",
     "Sponsors",
   ]);
-  const [selectedOption, setSelectedOption] = useState<OptionType>("Organizer");
+  const [selectedOption, setSelectedOption] = useState<OptionType>("Schedule");
 
   const { loading, error, data } = useQuery<ISingleConferenceResponse>(
     GET_CONFERENCE,
@@ -62,6 +64,16 @@ const ConferencePage = ({ id }: { id: string }) => {
                 {selectedOption == "Organizer" &&
                   data?.conference?.organizers?.map((org, index) => (
                     <ConferenceOrganizerCard key={index} organizer={org} />
+                  ))}
+
+                {selectedOption == "Speakers" &&
+                  data?.conference?.speakers?.map((speaker, index) => (
+                    <ConferenceSpeakerCard key={index} speaker={speaker} />
+                  ))}
+
+                {selectedOption == "Schedule" &&
+                  data?.conference?.schedules?.map((schedule, index) => (
+                    <ConferenceScheduleCard key={index} schedule={schedule} />
                   ))}
               </div>
             </div>
